@@ -6,11 +6,13 @@ import java.util.Hashtable;
 
 
 public class Player {
+	
 	//the key of colorGroups is the name of the color group.
 	private Hashtable colorGroups = new Hashtable();
 	private boolean inJail;
 	private int money;
 	private String name;
+	
 
 	private Cell position;
 	private ArrayList properties = new ArrayList();
