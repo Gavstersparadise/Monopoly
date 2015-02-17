@@ -28,6 +28,7 @@ public class PropertyCell extends Cell {
 		if(numHouses > 0) {
 			rentToCharge = rent * (numHouses + 1);
 		}
+		
 		return rentToCharge;
 	}
 
