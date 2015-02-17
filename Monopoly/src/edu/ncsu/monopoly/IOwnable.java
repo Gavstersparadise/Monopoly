@@ -10,6 +10,7 @@ public interface IOwnable {
 
 	public abstract void setAvailable(boolean available);
 
+	
 
 	public abstract boolean isAvailable();
 	
