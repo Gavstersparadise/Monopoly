@@ -19,6 +19,7 @@ public class CardsTest extends TestCase {
     }
     
     public void testCardType() {
+    	
         Card card = gameMaster.drawCCCard();
         assertEquals(Card.TYPE_CC, ccCard.getCardType());
         card = gameMaster.drawChanceCard();
