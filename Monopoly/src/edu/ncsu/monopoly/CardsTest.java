@@ -12,6 +12,7 @@ public class CardsTest extends TestCase {
         gameMaster.setGameBoard(new GameBoardCCGainMoney());
         gameMaster.setNumberOfPlayers(1);
         gameMaster.reset();
+        
         gameMaster.setGUI(new MockGUI());
         ccCard = new MoneyCard("Get 50 dollars", 50, Card.TYPE_CC);
         chanceCard = new MoneyCard("Lose 50 dollars", -50, Card.TYPE_CHANCE);
