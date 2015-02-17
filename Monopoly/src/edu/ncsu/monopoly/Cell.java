@@ -3,7 +3,7 @@ package edu.ncsu.monopoly;
 public abstract class Cell implements IOwnable {
 	private String name;
 	protected Player theOwner;
-	protected boolean available = true;
+	private boolean available = true;
 
 	public String getName() {
 		return name;
@@ -32,4 +32,14 @@ public abstract class Cell implements IOwnable {
     public String toString() {
         return name;
     }
+
+	@Override
+	public boolean isAvailable() {
+		return available;
+	}
+
+	@Override
+	public void setAvailable(boolean available) {
+		this.available = available;
+	}
 }

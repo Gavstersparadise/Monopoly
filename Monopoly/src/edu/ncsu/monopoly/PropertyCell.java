@@ -70,14 +70,4 @@ public class PropertyCell extends Cell {
 	public void setRent(int rent) {
 		this.rent = rent;
 	}
-
-	@Override
-	public boolean isAvailable() {
-		return available;
-	}
-
-	@Override
-	public void setAvailable(boolean available) {
-		this.available = available;
-	}
 }

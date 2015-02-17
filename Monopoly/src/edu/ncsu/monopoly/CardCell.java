@@ -14,14 +14,4 @@ public class CardCell extends Cell {
     public int getType() {
         return type;
     }
-
-	@Override
-	public boolean isAvailable() {
-		return available;
-	}
-
-	@Override
-	public void setAvailable(boolean available) {
-		this.available = available;
-	}
 }
