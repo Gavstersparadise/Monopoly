@@ -9,11 +9,11 @@ import edu.ncsu.monopoly.*;
 
 public class GUICell extends JPanel {
 
-	private Cell cell;
+	private IOwnable cell;
 	private JLabel lblInfo;
 	private JLabel[] lblPlayers = new JLabel[GameMaster.MAX_PLAYER];
 	
-    public GUICell(Cell cell) {
+    public GUICell(IOwnable cell) {
         this.cell = cell;
         setLayout(new OverlayLayout(this));
         setBorder(new BevelBorder(BevelBorder.LOWERED));

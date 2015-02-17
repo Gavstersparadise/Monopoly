@@ -1,12 +1,12 @@
 package edu.ncsu.monopoly.gui;
 
-import edu.ncsu.monopoly.Cell;
+import edu.ncsu.monopoly.IOwnable;
 import edu.ncsu.monopoly.Player;
 import edu.ncsu.monopoly.UtilityCell;
 
 public class UtilCellInfoFormatter implements CellInfoFormatter {
 
-	public String format(Cell cell) {
+	public String format(IOwnable cell) {
         UtilityCell c = (UtilityCell)cell;
         StringBuffer buf = new StringBuffer();
         Player owner = cell.getTheOwner();

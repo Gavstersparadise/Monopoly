@@ -52,7 +52,7 @@ public class MainWindow extends JFrame implements MonopolyGUI{
 	
 	private void addCells(JPanel panel, List cells) {
 		for(int x=0; x<cells.size(); x++) {
-			GUICell cell = new GUICell((Cell)cells.get(x));
+			GUICell cell = new GUICell((IOwnable)cells.get(x));
 			panel.add(cell);
 			guiCells.add(cell);
 		}

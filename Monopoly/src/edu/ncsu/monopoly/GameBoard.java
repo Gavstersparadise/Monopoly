@@ -50,8 +50,8 @@ public class GameBoard {
         return card;
     }
 
-	public Cell getCell(int newIndex) {
-		return (Cell)cells.get(newIndex);
+	public IOwnable getCell(int newIndex) {
+		return (IOwnable)cells.get(newIndex);
 	}
 	
 	public int getCellNumber() {
