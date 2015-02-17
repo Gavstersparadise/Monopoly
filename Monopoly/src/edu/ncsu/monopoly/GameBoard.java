@@ -83,9 +83,9 @@ public class GameBoard {
 		return 0;
 	}
 
-	public Cell queryCell(String string) {
+	public IOwnable queryCell(String string) {
 		for(int i = 0; i < cells.size(); i++){
-			Cell temp = (Cell)cells.get(i); 
+			IOwnable temp = (IOwnable)cells.get(i); 
 			if(temp.getName().equals(string)) {
 				return temp;
 			}
@@ -95,7 +95,7 @@ public class GameBoard {
 	
 	public int queryCellIndex(String string){
 		for(int i = 0; i < cells.size(); i++){
-			Cell temp = (Cell)cells.get(i); 
+			IOwnable temp = (IOwnable)cells.get(i); 
 			if(temp.getName().equals(string)) {
 				return i;
 			}
