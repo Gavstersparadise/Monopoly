@@ -18,7 +18,7 @@ public abstract class Cell implements  IOwnable {
 	 * @see edu.ncsu.monopoly.IOwnable#getTheOwner()
 	 */
 	@Override
-	public Player getTheOwner() {
+	public Player getOwner() {
 		return theOwner;
 	}
 	
@@ -46,7 +46,7 @@ public abstract class Cell implements  IOwnable {
 	 * @see edu.ncsu.monopoly.IOwnable#setTheOwner(edu.ncsu.monopoly.Player)
 	 */
 	@Override
-	public void setTheOwner(Player owner) {
+	public void setOwner(Player owner) {
 		this.theOwner = owner;
 	}
     
