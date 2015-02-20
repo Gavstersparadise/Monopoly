@@ -52,13 +52,7 @@ public class GameMaster {
 		setAllButtonEnabled(false);
 		getCurrentPlayer().getPosition().playAction(null);
 		if(getCurrentPlayer().isBankrupt()) {
-			gui.setBuyHouseEnabled(false);
-			gui.setDrawCardEnabled(false);
-			gui.setEndTurnEnabled(false);
-			gui.setGetOutOfJailEnabled(false);
-			gui.setPurchasePropertyEnabled(false);
-			gui.setRollDiceEnabled(false);
-			gui.setTradeEnabled(getCurrentPlayerIndex(),false);
+			setAllButtonsDisabled();
 			updateGUI();
 		}
 		else {
@@ -70,13 +64,7 @@ public class GameMaster {
     public void btnGetOutOfJailClicked() {
 		getCurrentPlayer().getOutOfJail();
 		if(getCurrentPlayer().isBankrupt()) {
-			gui.setBuyHouseEnabled(false);
-			gui.setDrawCardEnabled(false);
-			gui.setEndTurnEnabled(false);
-			gui.setGetOutOfJailEnabled(false);
-			gui.setPurchasePropertyEnabled(false);
-			gui.setRollDiceEnabled(false);
-			gui.setTradeEnabled(getCurrentPlayerIndex(),false);
+			setAllButtonsDisabled();
 		}
 		else {
 			gui.setRollDiceEnabled(true);
@@ -84,6 +72,16 @@ public class GameMaster {
 			gui.setGetOutOfJailEnabled(getCurrentPlayer().isInJail());
 		}
     }
+
+	private void setAllButtonsDisabled() {
+		gui.setBuyHouseEnabled(false);
+		gui.setDrawCardEnabled(false);
+		gui.setEndTurnEnabled(false);
+		gui.setGetOutOfJailEnabled(false);
+		gui.setPurchasePropertyEnabled(false);
+		gui.setRollDiceEnabled(false);
+		gui.setTradeEnabled(getCurrentPlayerIndex(),false);
+	}
 
     public void btnPurchasePropertyClicked() {
         Player player = getCurrentPlayer();
@@ -198,9 +196,8 @@ public class GameMaster {
 	public void movePlayer(Player player, int diceValue) {
 		IOwnable currentPosition = player.getPosition();
 		int positionIndex = gameBoard.queryCellIndex(currentPosition.getName());
-		int cellNumber = gameBoard.getCellNumber();
-		int newIndex = (positionIndex+diceValue)%cellNumber;
-		if(newIndex <= positionIndex || diceValue > cellNumber) {
+		int newIndex = (positionIndex+diceValue)%gameBoard.getCellNumber();
+		if(newIndex <= positionIndex || diceValue > gameBoard.getCellNumber()) {
 			player.setMoney(player.getMoney() + 200);
 		}
 		player.setPosition(gameBoard.getCell(newIndex));
